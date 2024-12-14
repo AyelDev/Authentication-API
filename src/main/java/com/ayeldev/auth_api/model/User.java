@@ -1,6 +1,7 @@
 package com.ayeldev.auth_api.model;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -42,18 +43,18 @@ public class User implements UserDetails{
 	
 	@CreationTimestamp
 	@Column(updatable = false, name = "created_at")
-	private TimeZone createAt;
+	private Date createAt;
 	
 	@UpdateTimestamp
 	@Column(name = "updatedAt")
-	private TimeZone updatedAt;
+	private Date updatedAt;
 	
 	public User(){
 		super();
 	}
 
 	public User(Integer id, String firstname, String middlename, String lastname, String email, String password,
-			TimeZone createAt, TimeZone updatedAt) {
+			Date createAt, Date updatedAt) {
 		super();
 		this.id = id;
 		this.firstname = firstname;
@@ -144,19 +145,19 @@ public class User implements UserDetails{
 		this.password = password;
 	}
 
-	public TimeZone getCreateAt() {
+	public Date getCreateAt() {
 		return createAt;
 	}
 
-	public void setCreateAt(TimeZone createAt) {
+	public void setCreateAt(Date createAt) {
 		this.createAt = createAt;
 	}
 
-	public TimeZone getUpdatedAt() {
+	public Date getUpdatedAt() {
 		return updatedAt;
 	}
 
-	public void setUpdatedAt(TimeZone updatedAt) {
+	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
 
